@@ -32,7 +32,12 @@ class MyApp extends StatelessWidget {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return MaterialApp(
                     home: Scaffold(
-                      body: SizedBox(height: 200, child: getSimpleCrousel()),
+                      body: Center(
+                        child: SizedBox(
+                          height: 250,
+                          child: getSimpleCrousel(),
+                        ),
+                      ),
                     ),
                   );
                 }));
@@ -45,7 +50,12 @@ class MyApp extends StatelessWidget {
                     .push(MaterialPageRoute(builder: (context) {
                   return MaterialApp(
                     home: Scaffold(
-                      body: getReverseCrousel(),
+                      body: Center(
+                        child: SizedBox(
+                          height: 250,
+                          child: getReverseCrousel(),
+                        ),
+                      ),
                     ),
                   );
                 }));
@@ -58,7 +68,12 @@ class MyApp extends StatelessWidget {
                     .push(MaterialPageRoute(builder: (context) {
                   return MaterialApp(
                     home: Scaffold(
-                      body: getRotationalCrousel(),
+                      body: Center(
+                        child: SizedBox(
+                          height: 250,
+                          child: getRotationalCrousel(),
+                        ),
+                      ),
                     ),
                   );
                 }));
@@ -71,7 +86,30 @@ class MyApp extends StatelessWidget {
                     .push(MaterialPageRoute(builder: (context) {
                   return MaterialApp(
                     home: Scaffold(
-                      body: getVariableScaleCrousel(),
+                      body: Center(
+                        child: SizedBox(
+                          height: 250,
+                          child: getVariableScaleCrousel(),
+                        ),
+                      ),
+                    ),
+                  );
+                }));
+              },
+            ),
+            ListTile(
+              title: Text("Item Opacity Control Crousel"),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return MaterialApp(
+                    home: Scaffold(
+                      body: Center(
+                        child: SizedBox(
+                          height: 250,
+                          child: getOpacityCrousel(),
+                        ),
+                      ),
                     ),
                   );
                 }));
@@ -84,7 +122,9 @@ class MyApp extends StatelessWidget {
                     .push(MaterialPageRoute(builder: (context) {
                   return MaterialApp(
                     home: Scaffold(
-                      body: getStackSlider(),
+                      body: Center(
+                        child: getStackSlider(),
+                      ),
                     ),
                   );
                 }));
@@ -122,6 +162,7 @@ class MyApp extends StatelessWidget {
                 Navigator.of(context)
                     .push(MaterialPageRoute(builder: (context) {
                   return MaterialApp(
+                    theme: ThemeData.dark(),
                     home: Scaffold(
                       body: getGallerySlider(),
                     ),
@@ -147,40 +188,58 @@ class MyApp extends StatelessWidget {
     return FinitePager(
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        Card(
-          color: Colors.pink,
+        Container(
+          color: Colors.deepPurple,
           child: Center(
-            child: Text("1"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.red,
           child: Center(
-            child: Text("2"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.yellow,
           child: Center(
-            child: Text("3"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.lightBlue,
           child: Center(
-            child: Text("4"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.green,
           child: Center(
-            child: Text("5"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.orange,
           child: Center(
-            child: Text("6"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
       ],
@@ -192,40 +251,58 @@ class MyApp extends StatelessWidget {
       reverse: true,
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        Card(
-          color: Colors.pink,
+        Container(
+          color: Colors.deepPurple,
           child: Center(
-            child: Text("1"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.red,
           child: Center(
-            child: Text("2"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.yellow,
           child: Center(
-            child: Text("3"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.lightBlue,
           child: Center(
-            child: Text("4"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.green,
           child: Center(
-            child: Text("5"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.orange,
           child: Center(
-            child: Text("6"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
       ],
@@ -237,40 +314,58 @@ class MyApp extends StatelessWidget {
       rotationY: 60,
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        Card(
-          color: Colors.pink,
+        Container(
+          color: Colors.deepPurple,
           child: Center(
-            child: Text("1"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.red,
           child: Center(
-            child: Text("2"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.yellow,
           child: Center(
-            child: Text("3"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.lightBlue,
           child: Center(
-            child: Text("4"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.green,
           child: Center(
-            child: Text("5"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.orange,
           child: Center(
-            child: Text("6"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
       ],
@@ -283,40 +378,70 @@ class MyApp extends StatelessWidget {
       scaleY: 0.4,
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        Card(
-          color: Colors.pink,
+        Container(
+          color: Colors.deepPurple,
           child: Center(
-            child: Text("1"),
+            child: Card(
+              child: Image.asset(
+                "images/watch_1.jpg",
+                height: 200,
+              ),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.red,
           child: Center(
-            child: Text("2"),
+            child: Card(
+              child: Image.asset(
+                "images/watch_2.jpg",
+                height: 200,
+              ),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.yellow,
           child: Center(
-            child: Text("3"),
+            child: Card(
+              child: Image.asset(
+                "images/watch_3.jpg",
+                height: 200,
+              ),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.lightBlue,
           child: Center(
-            child: Text("4"),
+            child: Card(
+              child: Image.asset(
+                "images/watch_4.jpg",
+                height: 200,
+              ),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.green,
           child: Center(
-            child: Text("5"),
+            child: Card(
+              child: Image.asset(
+                "images/watch_1.jpg",
+                height: 200,
+              ),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.orange,
           child: Center(
-            child: Text("6"),
+            child: Card(
+              child: Image.asset(
+                "images/watch_2.jpg",
+                height: 200,
+              ),
+            ),
           ),
         ),
       ],
@@ -328,40 +453,58 @@ class MyApp extends StatelessWidget {
       opacity: 0.4,
       scrollDirection: Axis.horizontal,
       children: <Widget>[
-        Card(
-          color: Colors.pink,
+        Container(
+          color: Colors.deepPurple,
           child: Center(
-            child: Text("1"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.red,
           child: Center(
-            child: Text("2"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.yellow,
           child: Center(
-            child: Text("3"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.lightBlue,
           child: Center(
-            child: Text("4"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.green,
           child: Center(
-            child: Text("5"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
           ),
         ),
-        Card(
+        Container(
           color: Colors.orange,
           child: Center(
-            child: Text("6"),
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
           ),
         ),
       ],
@@ -374,39 +517,39 @@ class MyApp extends StatelessWidget {
       scrollDirection: Axis.vertical,
       children: <Widget>[
         Card(
-          color: Colors.pink,
-          child: Center(
-            child: Text("1"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.red,
-          child: Center(
-            child: Text("2"),
+          child: Image.asset(
+            "images/building2.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.yellow,
-          child: Center(
-            child: Text("3"),
+          child: Image.asset(
+            "images/building3.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.lightBlue,
-          child: Center(
-            child: Text("4"),
+          child: Image.asset(
+            "images/building4.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.green,
-          child: Center(
-            child: Text("5"),
+          child: Image.asset(
+            "images/building5.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.orange,
-          child: Center(
-            child: Text("6"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
       ],
@@ -420,39 +563,39 @@ class MyApp extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       children: <Widget>[
         Card(
-          color: Colors.pink,
-          child: Center(
-            child: Text("1"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.red,
-          child: Center(
-            child: Text("2"),
+          child: Image.asset(
+            "images/building2.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.yellow,
-          child: Center(
-            child: Text("3"),
+          child: Image.asset(
+            "images/building3.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.lightBlue,
-          child: Center(
-            child: Text("4"),
+          child: Image.asset(
+            "images/building4.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.green,
-          child: Center(
-            child: Text("5"),
+          child: Image.asset(
+            "images/building5.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.orange,
-          child: Center(
-            child: Text("6"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
       ],
@@ -466,39 +609,39 @@ class MyApp extends StatelessWidget {
       scrollDirection: Axis.horizontal,
       children: <Widget>[
         Card(
-          color: Colors.pink,
-          child: Center(
-            child: Text("1"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.red,
-          child: Center(
-            child: Text("2"),
+          child: Image.asset(
+            "images/building2.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.yellow,
-          child: Center(
-            child: Text("3"),
+          child: Image.asset(
+            "images/building3.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.lightBlue,
-          child: Center(
-            child: Text("4"),
+          child: Image.asset(
+            "images/building4.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.green,
-          child: Center(
-            child: Text("5"),
+          child: Image.asset(
+            "images/building5.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.orange,
-          child: Center(
-            child: Text("6"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
       ],
@@ -507,47 +650,48 @@ class MyApp extends StatelessWidget {
 
   Widget getGallerySlider() {
     return FinitePager(
-      opacity: 0.5,
+      opacity: 0.2,
       scaleX: 0.5,
       scaleY: 0.5,
+      overscroll: 0,
       reverse: true,
       pagerType: PagerType.stack,
       scrollDirection: Axis.horizontal,
       children: <Widget>[
         Card(
-          color: Colors.pink,
-          child: Center(
-            child: Text("1"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.red,
-          child: Center(
-            child: Text("2"),
+          child: Image.asset(
+            "images/building2.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.yellow,
-          child: Center(
-            child: Text("3"),
+          child: Image.asset(
+            "images/building3.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.lightBlue,
-          child: Center(
-            child: Text("4"),
+          child: Image.asset(
+            "images/building4.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.green,
-          child: Center(
-            child: Text("5"),
+          child: Image.asset(
+            "images/building5.jpg",
+            fit: BoxFit.cover,
           ),
         ),
         Card(
-          color: Colors.orange,
-          child: Center(
-            child: Text("6"),
+          child: Image.asset(
+            "images/building1.jpg",
+            fit: BoxFit.cover,
           ),
         ),
       ],

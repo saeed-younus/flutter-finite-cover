@@ -44,7 +44,7 @@ class FinitePager extends StatefulWidget {
     this.physics = const BouncingScrollPhysics(),
     this.onPageChanged,
     this.pageSnapping = true,
-    this.viewportFraction = 0.75,
+    this.viewportFraction = 0.5,
     this.scaleX = 1,
     this.scaleY = 1,
     this.opacity = 1,
@@ -185,34 +185,45 @@ class _FinitePagerState extends State<FinitePager> {
                   var scaleYValue = (widget.scaleY +
                       (1 - widget.scaleY) * (1 - (position.abs())));
                   var transitionX = widget.scrollDirection == Axis.horizontal
-                      ? widget.reverse
-                          ? (index - currentPageValue) *
-                              (pagerSize.width + widget.overscroll)
-                          : (currentPageValue - index) *
-                              (pagerSize.width + widget.overscroll)
-                      : 0;
+                      ? (widget.reverse
+                          ? ((index - currentPageValue) *
+                              ((pagerSize.width +
+                                  ((pagerSize.width * (1 - scaleXValue)) * 2) +
+                                  widget.overscroll)))
+                          : ((currentPageValue - index) *
+                              ((pagerSize.width -
+                                  ((pagerSize.width * (1 - scaleXValue)) * 2) +
+                                  widget.overscroll))))
+                      : 0.0;
                   var transitionY = widget.scrollDirection == Axis.vertical
-                      ? widget.reverse
-                          ? (index - currentPageValue) *
-                              (pagerSize.height + widget.overscroll)
-                          : (currentPageValue - index) *
-                              (pagerSize.height + widget.overscroll)
-                      : 0;
+                      ? (widget.reverse
+                          ? ((index - currentPageValue) *
+                              ((pagerSize.height +
+                                  ((pagerSize.height * (1 - scaleXValue)) * 2) +
+                                  widget.overscroll)))
+                          : ((currentPageValue - index) *
+                              ((pagerSize.height -
+                                  ((pagerSize.height * (1 - scaleXValue)) * 2) +
+                                  widget.overscroll))))
+                      : 0.0;
+                  debugPrint(
+                      "Index $index Position $currentPageValue TranslationX $transitionX");
+                  debugPrint("TranslationY $transitionY");
                   return Opacity(
                     opacity: opacityValue,
                     child: Transform(
                       transform: Matrix4.identity()
-                        ..scale(scaleXValue, scaleYValue)
-                        ..rotateY(rotationYValue)
-                        ..rotateX(rotationXValue)
-                        ..translate(transitionX, transitionY),
+                        ..scale(scaleXValue ?? 0, scaleYValue ?? 0)
+                        ..rotateY(rotationYValue ?? 0)
+                        ..rotateX(rotationXValue ?? 0)
+                        ..translate(transitionX ?? 0, transitionY ?? 0),
                       alignment: Alignment(0, 0),
                       child: widget.children[index],
                     ),
                   );
                 } else if (index == currentPageValue.floor() + 1) {
                   return Transform(
-                    transform: Matrix4.identity()..translate(0, 0),
+                    transform: Matrix4.identity()..translate(0.0, 0.0),
                     alignment: Alignment(0, 1),
                     child: widget.children[index],
                   );
