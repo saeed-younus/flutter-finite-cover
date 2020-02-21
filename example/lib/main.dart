@@ -18,8 +18,13 @@ class EntryWidget extends StatelessWidget {
   }
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget {
   // This widget is the root of your application.
+  @override
+  _MyAppState createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -165,6 +170,20 @@ class MyApp extends StatelessWidget {
                     theme: ThemeData.dark(),
                     home: Scaffold(
                       body: getGallerySlider(),
+                    ),
+                  );
+                }));
+              },
+            ),
+            ListTile(
+              title: Text("WalkThrough Slider"),
+              onTap: () {
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) {
+                  return MaterialApp(
+                    theme: ThemeData.light(),
+                    home: Scaffold(
+                      body: WalkThroughSliderExample(),
                     ),
                   );
                 }));
@@ -697,4 +716,88 @@ class MyApp extends StatelessWidget {
       ],
     );
   }
+
 }
+
+class WalkThroughSliderExample extends StatefulWidget {
+  @override
+  _WalkThroughSliderExampleState createState() =>
+      _WalkThroughSliderExampleState();
+}
+
+class _WalkThroughSliderExampleState extends State<WalkThroughSliderExample> {
+  int selectedIndex = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: <Widget>[
+        Expanded(
+          child: FinitePager(
+            pagerType: PagerType.stack,
+            overscroll: -200,
+            opacity: 0.2,
+            scrollDirection: Axis.horizontal,
+            onPageChanged: (index) {
+              setState(() {
+                selectedIndex = index;
+              });
+            },
+            children: <Widget>[
+              Container(
+                child: Image.asset(
+                  "images/building1.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  "images/building2.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  "images/building3.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  "images/building4.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  "images/building5.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Container(
+                child: Image.asset(
+                  "images/building1.jpg",
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ],
+          ),
+        ),
+        Container(
+          height: 100,
+          child: Text(
+            "Page ${selectedIndex + 1}",
+            style: Theme
+                .of(context)
+                .textTheme
+                .display3
+                .copyWith(
+              color: Colors.black,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+}
+

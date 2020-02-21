@@ -206,9 +206,6 @@ class _FinitePagerState extends State<FinitePager> {
                                   ((pagerSize.height * (1 - scaleXValue)) * 2) +
                                   widget.overscroll))))
                       : 0.0;
-                  debugPrint(
-                      "Index $index Position $currentPageValue TranslationX $transitionX");
-                  debugPrint("TranslationY $transitionY");
                   return Opacity(
                     opacity: opacityValue,
                     child: Transform(

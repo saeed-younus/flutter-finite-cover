@@ -1,14 +1,456 @@
 # finite_coverflow
 
-Coverflow slider in flutter
+Coverflow slider in flutter which   helps you to create amazing slider,
+carousel and walkthrough sliders.
+
+<img src="https://i.imgur.com/Lw8LfWg.gif" height="400" width="200" />&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://i.imgur.com/vNHiSm1.gif" height="400" width="200" />
 
 ## Getting Started
 
-This project is a starting point for a Dart
-[package](https://flutter.dev/developing-packages/),
-a library module containing code that can be shared easily across
-multiple Flutter or Dart projects.
+### Simple Crousel Example
 
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+You can create simple crousel into your app by the following:
+
+``` AnyWidget.dart file
+    FinitePager(
+      scrollDirection: Axis.horizontal, // Scroll direction for pager
+      children: <Widget>[ // Add your child here
+        Container(
+          color: Colors.deepPurple,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.red,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.yellow,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.orange,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+      ],
+    )
+```
+
+Here is the result for this example
+<img src="https://i.imgur.com/21m40ag.gif" height="400" width="200" />
+
+### Rotational Crousel Example
+
+You can create rotational crousel into your app by adding rotation attribute in FinitePager:
+
+``` AnyWidget.dart file
+    FinitePager(
+      rotationY: 60, // Unselected item rotation value
+      scrollDirection: Axis.horizontal, // Scroll direction for pager
+      children: <Widget>[ // Add your child here
+        Container(
+          color: Colors.deepPurple,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.red,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.yellow,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.orange,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+      ],
+    )
+```
+
+Here is the result for this example
+<img src="https://i.imgur.com/jl4S0jX.gif" height="400" width="200" />
+
+### Scaled item Crousel Example
+
+You can create Scaled item crousel into your project by adding or changing the attribute value of scaleX and scaleY, just like this:
+
+``` AnyWidget.dart file
+    FinitePager(
+      scaleX: 0.8, // Minimum scaleX value 
+      scaleY: 0.4, // Minimum scaleY value 
+      scrollDirection: Axis.horizontal, // Scroll direction for pager
+      children: <Widget>[ // Add your child here
+        Container(
+          color: Colors.deepPurple,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.red,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.yellow,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.orange,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+      ],
+    )
+```
+
+Here is the result for this example
+<img src="https://i.imgur.com/vmEI2T0.gif" height="400" width="200" />
+
+### Opacity Crousel Example
+
+You can create opacity crousel into your app by adding minimum opacity attribute value, just like this:
+
+``` AnyWidget.dart file
+    FinitePager(
+      opacity: 0.4, // Minimum opacity value for the items
+      scrollDirection: Axis.horizontal, // Scroll direction for pager
+      children: <Widget>[ // Add your child here
+        Container(
+          color: Colors.deepPurple,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.red,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.yellow,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.orange,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+      ],
+    )
+```
+
+Here is the result for this example
+<img src="https://i.imgur.com/aC2kLic.gif" height="400" width="200" />
+
+### Stack Slider Example
+
+You can create Stack Slider into your app by changing the type of FinitePager to PagerType.stack:
+
+``` AnyWidget.dart file
+    FinitePager(
+      pagerType: PagerType.stack, // Change the FinitePager behavior to stack slider
+      scrollDirection: Axis.vertical, // Scroll direction for pager
+      children: <Widget>[ // Add your child here
+        Container(
+          color: Colors.deepPurple,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.red,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.yellow,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.orange,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+      ],
+    )
+```
+
+Here is the result for this example
+<img src="https://i.imgur.com/vNHiSm1.gif" height="400" width="200" />
+
+### OverScroll Stack Slider Example
+
+You can create Overflow Stack Slider into your app by adding type to
+PagerType.stack and change overscroll value.  
+***Note : overscroll is only applicable on PagerType.Stack ***
+
+``` AnyWidget.dart file
+    FinitePager(
+      overscroll: -300, // Over Scroll value when user slide in or slide off
+      pagerType: PagerType.stack, // PagerType by default set to carousel
+      scrollDirection: Axis.horizontal, // Scroll direction for pager
+      children: <Widget>[ // Add your child here
+        Container(
+          color: Colors.deepPurple,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.red,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.yellow,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_3.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.lightBlue,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_4.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.green,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_1.jpg"),
+            ),
+          ),
+        ),
+        Container(
+          color: Colors.orange,
+          child: Center(
+            child: Card(
+              shape: CircleBorder(),
+              child: Image.asset("images/watch_2.jpg"),
+            ),
+          ),
+        ),
+      ],
+    )
+```
+
+Here is the result for this example
+<img src="https://i.imgur.com/dIBgKXr.gif" height="400" width="200" />
+
+## Finite Coverflow attribute list
+
+Here is the detail of all attributes
+
+| Attribute Name   | Description                                                        | Applicable Type |
+|:-----------------|:-------------------------------------------------------------------|:----------------|
+| pagerType        | Set the FinitePager type i.e. PagerType.Carousel & PagerType.Stack | -               |
+| reverse          | Make reverse order if is set to true                               | Both            |
+| scrollDirection  | ScrollDirection of your pager i.e. Axis.Horizontal & Axis.Vertical | Both            |
+| viewPortFraction | Set the view port Fraction                                         | Carousel        |
+| pageSnapping     | For snapped your selected or current page                          | Both            |
+| physics          | It hold ScrollPhysics effects scrolling velocity etc.              | Both            |
+| onPageChanged    | Return callback and send back current index whenever selected      | Both            |
+| scaleX           | Minimum x-scale of unselected page                                 | Both            |
+| scaleY           | Minimum y-scale of unselected page                                 | Both            |
+| opacity          | set Opacity of unselected page                                     | Both            |
+| rotationX        | Maximum x-rotation of unselected page                              | Carousel        |
+| rotationY        | Maximum y-rotation of unselected page                              | Carousel        |
+| overscroll       | Make the last item overscrolled effect                             | Stack           |
+| key              | Get key and set in pager                                           | Both            |
+| children         | get list of widget and add into pager item                         |                 |
+
+
