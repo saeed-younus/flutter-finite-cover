@@ -1,7 +1,6 @@
 name: finite_coverflow
 description: Coverflow slider in flutter
 version: 0.0.1
-author: Muhammad Saeed Younus
 homepage: https://saeed-younus.github.io
 
 environment:
