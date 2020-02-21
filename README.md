@@ -453,7 +453,10 @@ Here is the detail of all attributes
 | key              | Get key and set in pager                                           | Both            |
 | children         | get list of widget and add into pager item                         |                 |
 
+## MIT License
+
 Copyright (c) 2020 Muhammad Saeed Younus
+
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
