@@ -58,7 +58,7 @@ class FinitePager extends StatefulWidget {
   })  : assert(scaleX <= 1 && scaleX >= 0),
         super(key: key);
 
-  factory FinitePager.Symmetric({
+  factory FinitePager.symmetric({
     @required List<Widget> children,
     ValueChanged<int> onPageChanged,
     ScrollPhysics physics = const BouncingScrollPhysics(),

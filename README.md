@@ -1,7 +1,6 @@
 # finite_coverflow
 
-Coverflow slider in flutter which   helps you to create amazing slider,
-carousel and walkthrough sliders.
+Coverflow slider in flutter which helps you to create amazing slider, carousel and walkthrough sliders.
 
 <img src="https://i.imgur.com/Lw8LfWg.gif" height="400" width="200" />&nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://i.imgur.com/vNHiSm1.gif" height="400" width="200" />

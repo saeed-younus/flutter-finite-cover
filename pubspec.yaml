@@ -1,6 +1,6 @@
 name: finite_coverflow
-description: Coverflow slider in flutter
-version: 0.0.1
+description: Coverflow slider in flutter which helps you to create amazing slider, carousel and walkthrough sliders
+version: 1.0.0
 homepage: https://saeed-younus.github.io
 
 environment:
